@@ -1,0 +1,30 @@
+.detailImg {
+  padding: 5px;
+  background-color: #f9def5;
+  max-width: 500px;
+  display: block;
+}
+
+.title__detail {
+  color: #e8594c;
+  margin-bottom: 0;
+  line-height: 1;
+}
+small {
+  color: #777;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.container__detail {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 4;
+  gap: 30px;
+  margin-block: 50px;
+}
+
+.left {
+  margin-top: 30px;
+}
