@@ -1,11 +1,9 @@
 import { Header, Nav, Input } from "./styledNav";
 import { FaSearch } from "react-icons/fa";
-import { searchContext } from "../contexts/searchContext";
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
-  const { value, setValue } = useContext(searchContext);
+const Navbar = ({ value, setValue }) => {
   const ref = useRef(null);
 
   return (

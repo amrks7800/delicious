@@ -2,7 +2,6 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { searchContext } from "./contexts/searchContext";
 import { useState } from "react";
 import Search from "./pages/Search";
 import Cuisine from "./pages/Cuisine";
@@ -13,17 +12,15 @@ function App() {
 
   return (
     <div className="App">
-      <searchContext.Provider value={{ value, setValue }}>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/cuisine/:type" element={<Cuisine />} />
-            <Route path="/recipe/:id" element={<Recipe />} />
-          </Routes>
-        </Router>
-      </searchContext.Provider>
+      <Router>
+        <Navbar value={value} setValue={setValue} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search value={value} />} />
+          <Route path="/cuisine/:type" element={<Cuisine />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

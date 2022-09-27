@@ -47,12 +47,13 @@ export const Nav = styled.nav`
 
 export const Input = styled.input`
   padding: 1rem;
-  min-width: min(90vw, 380px);
+  min-width: max(80vw, 380px);
   font-size: 1.3rem;
   font-weight: 500;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   caret-color: #eb594c;
+  border-radius: 5px;
 
   &:focus {
     outline: none;

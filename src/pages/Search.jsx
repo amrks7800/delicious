@@ -1,16 +1,14 @@
-import { useState, useContext, useEffect } from "react";
-import { searchContext } from "../contexts/searchContext";
+import { useState, useEffect } from "react";
 import { Wrapper } from "../components/styledWrapper";
 import Card from "../components/styledCard";
 import { Link } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa";
 import { Overlay } from "../components/styledOverlay";
 
-const Search = () => {
-  const { value } = useContext(searchContext);
+const Search = ({ value }) => {
   const [recipes, setRecipes] = useState([]);
 
-  const searchItems = async () => {
+  const searchItems = async (value) => {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=04dcaf0e981c4065a52f430e4642d2b5&query=${value}`
     );
@@ -22,7 +20,7 @@ const Search = () => {
   };
 
   useEffect(() => {
-    searchItems();
+    searchItems(value);
   }, [value]);
 
   return (
