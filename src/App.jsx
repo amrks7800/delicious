@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar value={value} setValue={setValue} />
+        <Navbar setValue={setValue} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search value={value} />} />

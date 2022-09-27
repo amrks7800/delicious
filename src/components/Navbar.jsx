@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = ({ value, setValue }) => {
+const Navbar = ({ setValue }) => {
   const ref = useRef(null);
 
   return (
@@ -12,15 +12,18 @@ const Navbar = ({ value, setValue }) => {
         <h1>Delicious</h1>
       </div>
 
-      <form action="">
+      <form
+        action=""
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}>
         <Input
           placeholder="search for recipes"
           type="text"
+          ref={ref}
           onChange={(e) => {
             setValue(e.target.value);
           }}
-          value={value}
-          ref={ref}
         />
         <NavLink to="/search">
           <button
