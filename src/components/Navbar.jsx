@@ -16,21 +16,21 @@ const Navbar = ({ setValue }) => {
         action=""
         onSubmit={(e) => {
           e.preventDefault();
-        }}>
+          setValue(e.target.value);
+        }}
+      >
         <Input
           placeholder="search for recipes"
           type="text"
           ref={ref}
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
         />
         <NavLink to="/search">
           <button
             type="submit"
             onClick={() => {
               ref.current.value = "";
-            }}>
+            }}
+          >
             <FaSearch className="icon" />
             Search
           </button>
@@ -43,7 +43,9 @@ const Navbar = ({ setValue }) => {
             <NavLink to="/cuisine/italian">italian</NavLink>
           </li>
           <li>
-            <NavLink to="/cuisine/american">american</NavLink>
+            <NavLink to="/cuisine/american">
+              american
+            </NavLink>
           </li>
           <li>
             <NavLink to="/cuisine/Thai">Thai</NavLink>
