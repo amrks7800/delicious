@@ -1,7 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import { useState } from "react";
 import Search from "./pages/Search";
 import Cuisine from "./pages/Cuisine";
@@ -16,8 +20,14 @@ function App() {
         <Navbar setValue={setValue} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search value={value} />} />
-          <Route path="/cuisine/:type" element={<Cuisine />} />
+          <Route
+            path="/search"
+            element={<Search value={value} />}
+          />
+          <Route
+            path="/cuisine/:type"
+            element={<Cuisine />}
+          />
           <Route path="/recipe/:id" element={<Recipe />} />
         </Routes>
       </Router>
